@@ -38,6 +38,16 @@ Se PowerShell blocca l'esecuzione degli script, eseguire una volta il seguente c
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
+## Uscire dall'ambiente virtuale
+
+Per disattivare l'ambiente virtuale:
+
+```bash
+deactivate
+```
+
+Dopo questo comando il prefisso `(.venv)` scomparirà dal terminale, indicando che si è tornati all'ambiente Python di sistema.
+
 ## 3. Aggiornare pip
 
 Con l'ambiente virtuale attivo, aggiornare `pip`:
@@ -66,19 +76,7 @@ Per controllare che i pacchetti siano stati installati correttamente:
 pip list
 ```
 
-## Uscire dall'ambiente virtuale
-
-Per disattivare l'ambiente virtuale:
-
-```bash
-deactivate
-```
-
-Dopo questo comando il prefisso `(.venv)` scomparirà dal terminale, indicando che si è tornati all'ambiente Python di sistema.
-
 ## Estensioni consigliate per Visual Studio Code
-
-Per una migliore esperienza di sviluppo, si consiglia di installare le seguenti estensioni:
 
 - Python
 - Pylance
