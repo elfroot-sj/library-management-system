@@ -7,7 +7,6 @@ Tutti i comandi devono essere eseguiti **all'interno dell'ambiente virtuale**. S
 
 ```bash
 python3 -m venv .venv
-````
 
 Attivare l'ambiente virtuale:
 
