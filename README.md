@@ -1,67 +1,87 @@
-````markdown
 # Library Management System – Istruzioni di installazione
 
-Tutti i comandi devono essere eseguiti **all'interno dell'ambiente virtuale**. Se questo passaggio viene saltato, i pacchetti verranno installati a livello di sistema.
+Questa guida spiega come configurare l'ambiente di sviluppo del progetto.
 
-1. Creare un ambiente virtuale
+Tutti i comandi di installazione devono essere eseguiti **dopo aver attivato l'ambiente virtuale**. In caso contrario, i pacchetti verranno installati a livello di sistema.
+
+## 1. Creare un ambiente virtuale
 
 ```bash
 python3 -m venv .venv
-````
+```
 
-Attivare l'ambiente virtuale:
+## 2. Attivare l'ambiente virtuale
 
-Linux / macOS
+### Linux / macOS
 
 ```bash
 source .venv/bin/activate
 ```
 
-Windows (PowerShell)
+### Windows (PowerShell)
 
 ```powershell
-.venv\Scripts\activate
+.\.venv\Scripts\Activate.ps1
 ```
 
-Per uscire dall'ambiente virtuale(uguale per tutti i sistemi operativi):
+### Windows (Command Prompt)
 
-```bash
-deactivate
+```cmd
+.venv\Scripts\activate.bat
 ```
 
-2. Aggiornare pip
+Dopo l'attivazione, il terminale mostrerà il prefisso `(.venv)` all'inizio della riga, indicando che l'ambiente virtuale è attivo.
+
+Se PowerShell blocca l'esecuzione degli script, eseguire una volta il seguente comando:
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+## 3. Aggiornare pip
+
+Con l'ambiente virtuale attivo, aggiornare `pip`:
 
 ```bash
 pip install --upgrade pip
 ```
 
-3. Installare le dipendenze di produzione
+## 4. Installare le dipendenze di produzione
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Installare le dipendenze di sviluppo
+## 5. Installare le dipendenze di sviluppo
 
 ```bash
 pip install -r requirements_dev.txt
 ```
 
-5. Verificare l'installazione
+## 6. Verificare l'installazione
+
+Per controllare che i pacchetti siano stati installati correttamente:
 
 ```bash
 pip list
 ```
 
-Dopo il comando, il terminale non mostrerà più `(.venv)` all'inizio della riga, indicando che si è tornati all'ambiente Python di sistema.
+## Uscire dall'ambiente virtuale
 
-Estensioni consigliate per l'IDE (Visual Studio Code):
+Per disattivare l'ambiente virtuale:
 
-* Python
-* Pylance
-* Python debugger
-* Python Environments
-* SQLite viewer
-
+```bash
+deactivate
 ```
-```
+
+Dopo questo comando il prefisso `(.venv)` scomparirà dal terminale, indicando che si è tornati all'ambiente Python di sistema.
+
+## Estensioni consigliate per Visual Studio Code
+
+Per una migliore esperienza di sviluppo, si consiglia di installare le seguenti estensioni:
+
+- Python
+- Pylance
+- Python Debugger
+- Python Environments
+- SQLite Viewer
