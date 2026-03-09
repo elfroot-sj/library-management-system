@@ -1,1 +1,1 @@
-# Avvio dell'applicazione Flask.
+# app principale
