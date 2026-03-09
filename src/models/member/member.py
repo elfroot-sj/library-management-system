@@ -15,6 +15,8 @@ class MemberData:
 
 
 class Member:
+    MAX_ACTIVE_LOANS = 3
+
     def __init__(self, data: MemberData) -> None:
         self.__id: int = data.id
         self.__username: str = data.username
@@ -57,7 +59,7 @@ class Member:
 
     # Verifica se il membro può prendere in prestito un libro (massimo 3 prestiti attivi)
     def can_borrow(self) -> bool:
-        return len(self.__active_loans) < 3
+        return len(self.__active_loans) < self.MAX_ACTIVE_LOANS
 
     # Aggiunge un prestito attivo al membro, se possibile
     def add_active_loan(self, loan: Loan) -> None:
