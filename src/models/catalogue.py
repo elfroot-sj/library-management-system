@@ -47,16 +47,16 @@ class Catalogue():
         return f"Available books: {[str(book) for book in self.__bookList]}"
 
 
-def main():
-    catalogue = Catalogue()
-    catalogue.add_book("Book1")
+# def main():
+#     catalogue = Catalogue()
+#     catalogue.add_book("Book1")
 
-    catalogue2 = Catalogue()
-    catalogue2.add_book("Book2")
+#     catalogue2 = Catalogue()
+#     catalogue2.add_book("Book2")
 
-    print(f"List: {catalogue.get_bookList()}")
-    print(catalogue is catalogue2)  # True
+#     print(f"List: {catalogue.get_bookList()}")
+#     print(catalogue is catalogue2)  # True
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
