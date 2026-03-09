@@ -48,4 +48,3 @@ class Catalogue:
 
     def __str__(self):
         return f"Available books: {[str(book) for book in self._bookList]}"
-    
