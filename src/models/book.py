@@ -1,26 +1,18 @@
 # Gestisce i dati dei libri nel database.
 
 
+from dataclasses import dataclass
 from typing import List
 
 
+@dataclass
 class Book:
-
-    def __init__(
-        self,
-        id: int,
-        title: str,
-        authors: List[str],
-        language: List[str],
-        first_publish_year: int,
-        ebook_access: str,
-    ):
-        self.id = id
-        self.title = title
-        self.authors = authors
-        self.language = language
-        self.first_publish_year = first_publish_year
-        self.ebook_access = ebook_access
+    id: int
+    title: str
+    authors: List[str]
+    language: List[str]
+    first_publish_year: int
+    ebook_access: str
 
     def is_available(self) -> bool:
         return self.ebook_access != "no_ebook"
