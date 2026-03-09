@@ -1,2 +1,1 @@
-# app principale
 # pylint: skip-file

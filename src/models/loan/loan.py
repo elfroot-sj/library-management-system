@@ -1,19 +1,23 @@
 from dataclasses import dataclass
 from datetime import date
+from typing import TYPE_CHECKING
 
-from .book import Book
-from .member import Member
+from ..book.book import Book
+
+if TYPE_CHECKING:
+    from ..member.member import Member
 
 
 @dataclass
 class Loan:
+    DAILY_FINE = 1.0
+
     id: int
     member: Member
     book: Book
     loan_date: date
     due_date: date
     return_date: date | None = None
-    daily_fine: float = 1.0
     fine: float = 0.0
 
     def is_overdue(self) -> bool:
@@ -25,14 +29,14 @@ class Loan:
         if not self.is_overdue():
             self.fine = 0.0
             return self.fine
-        
+
         if self.return_date is None:
             end_date = date.today()
         else:
             end_date = self.return_date
 
         overdue_days = (end_date - self.due_date).days
-        self.fine = overdue_days * self.daily_fine
+        self.fine = overdue_days * self.DAILY_FINE
         return self.fine
 
     def close_loan(self, return_date: date) -> None:

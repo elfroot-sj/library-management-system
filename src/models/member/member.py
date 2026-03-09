@@ -1,5 +1,9 @@
-from .loan import Loan
 from dataclasses import dataclass
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from ..loan.loan import Loan
+
 
 @dataclass
 class MemberData:
@@ -8,6 +12,7 @@ class MemberData:
     email: str
     password: str
     address: str = ""
+
 
 class Member:
     def __init__(self, data: MemberData) -> None:

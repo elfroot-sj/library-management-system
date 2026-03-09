@@ -1,4 +1,5 @@
-from .book import Book
+from ..book.book import Book
+
 
 class Catalogue:
     __instance = None
@@ -30,19 +31,19 @@ class Catalogue:
     def search_by_title(self, title: str) -> list[Book]:
         results = [book for book in self.__booklist if book.title == title]
         if not results:
-            print ("Book not found.")
+            print("Book not found.")
         return results
 
     def search_by_author(self, author: str) -> list[Book]:
         results = [book for book in self.__booklist if author in book.authors]
         if not results:
-            print ("Book not found.")
+            print("Book not found.")
         return results
 
     def search_by_language(self, language: str) -> list[Book]:
         results = [book for book in self.__booklist if language in book.languages]
         if not results:
-            print ("Book not found.")
+            print("Book not found.")
         return results
 
     def __str__(self) -> str:

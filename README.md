@@ -76,6 +76,19 @@ Per controllare che i pacchetti siano stati installati correttamente:
 pip list
 ```
 
+
+## 7. Risoluzione errori import flask
+Aprire la cartella del progetto in VS Code.
+
+Selezionare l'interprete Python:
+
+Ctrl + Shift + P
+Python: Select Interpreter
+
+Selezionare:
+
+.venv/bin/python
+
 ## Estensioni consigliate per Visual Studio Code
 
 - Python
