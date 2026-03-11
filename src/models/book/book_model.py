@@ -18,3 +18,9 @@ class BookModel(db.Model):
             "languages": self.languages.split(","),
             "first_publish_year": self.first_publish_year,
         }
+
+    def update_from_dict(self, data: dict) -> None:
+        self.title = data["title"]
+        self.authors = data["authors"]
+        self.languages = data["languages"]
+        self.first_publish_year = data.get("first_publish_year")
