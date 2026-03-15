@@ -1,7 +1,8 @@
 from flask import Flask
 from src.models.base import db
 from src.views.catalogue_view import catalogue_bp
-from src.views.member_view import member_bp
+
+# from src.views.member_view import member_bp
 
 
 def create_app() -> Flask:
@@ -12,7 +13,7 @@ def create_app() -> Flask:
     db.init_app(app)
 
     app.register_blueprint(catalogue_bp)
-    app.register_blueprint(member_bp)
+    # app.register_blueprint(member_bp)
 
     with app.app_context():
         db.create_all()
