@@ -1,6 +1,7 @@
 # Rotte per esplorare o cercare i libri nel database usando il Catalogue.
 
 from flask import Blueprint, jsonify, request
+
 from src.services.catalogue_service import CatalogueService
 
 catalogue_bp = Blueprint("catalogue", __name__, url_prefix="/catalogue")
